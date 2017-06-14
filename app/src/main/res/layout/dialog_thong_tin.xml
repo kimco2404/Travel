@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#7d4daf7e"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:textSize="30sp"
+        android:textColor="#ff00"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/textViewThongTin"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@id/textViewTitle"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Thông tin"
+        android:scrollbars="vertical"
+        android:textSize="14dp" />
+
+    <Button
+        android:id="@+id/btnOk"
+        android:text="OK"
+        android:layout_below="@+id/textViewThongTin"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
