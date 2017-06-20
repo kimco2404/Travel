@@ -12,7 +12,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:textSize="30sp"
-        android:textColor="#ff00"
+        android:textColor="@color/com_facebook_blue"
         android:textStyle="bold"
         android:padding="10dp"
         android:layout_marginLeft="20dp"

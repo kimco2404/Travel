@@ -63,7 +63,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Đăng Nhập"
+                android:text="Đăng Ký"
                 android:textColor="@color/colorPrimary"
                 android:textSize="24dp" />
 
@@ -129,17 +129,17 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btDangNhap"
+                    android:id="@+id/btDangKi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/txtMatKhau"
                     android:layout_centerHorizontal="true"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="21dp"
-                    android:text="@string/dangnhap" />
+                    android:text="Đăng Ký" />
 
                 <Button
-                    android:id="@+id/btDangKy"
+                    android:id="@+id/btnHuy"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignEnd="@+id/btDangNhap"
@@ -147,43 +147,10 @@
                     android:layout_below="@+id/btDangNhap"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="16dp"
-                    android:text="@string/dangky" />
+                    android:text="Hủy" />
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingBottom="10dp"
-                android:text="Hoặc đăng nhập với tài khoản khác"
-                android:textColor="@color/colorPrimary"
-                android:textSize="20dp" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="138dp"
-                android:layout_gravity="center_horizontal"
-                android:orientation="vertical"
-                android:weightSum="1">
-
-                <com.google.android.gms.common.SignInButton
-                    android:id="@+id/bn_login"
-                    android:layout_width="219dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentStart="true">
-
-                </com.google.android.gms.common.SignInButton>
-
-                <com.facebook.login.widget.LoginButton
-                    android:id="@+id/login_button"
-                    android:layout_width="match_parent"
-                    android:layout_height="72dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignStart="@+id/txtMatKhau"></com.facebook.login.widget.LoginButton>
-            </LinearLayout>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>

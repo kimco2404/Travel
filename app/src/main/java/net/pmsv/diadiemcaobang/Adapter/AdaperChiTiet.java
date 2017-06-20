@@ -65,7 +65,6 @@ public class AdaperChiTiet extends BaseAdapter {
         } else {
             viewholder = (Viewholder) convertView.getTag();
         }
-
         ChiTiet ct = chiTiets.get(position);
         viewholder.hinh.setImageResource(ct.getHinh());
         viewholder.ten.setText(ct.getTen());

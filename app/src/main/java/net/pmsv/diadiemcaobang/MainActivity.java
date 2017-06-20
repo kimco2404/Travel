@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity
 
     private SQLiteDataAccessHelper SQLiteDataAccessHelper;
 
-    public Button btnDangNhap, btnDangKy, btnBoQua;
+    public Button btnDangNhap, btnDangKy;
     public Toolbar myToolbar;
 
 
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity
 
         btnDangKy = (Button) findViewById(R.id.btDangKy);
         btnDangNhap = (Button) findViewById(R.id.btDangNhap);
-        btnBoQua = (Button) findViewById(R.id.btBoQua);
+      //  btnBoQua = (Button) findViewById(R.id.btBoQua);
         myToolbar = (Toolbar) findViewById(R.id.toolbarChiTiet);
         setSupportActionBar(myToolbar);
 

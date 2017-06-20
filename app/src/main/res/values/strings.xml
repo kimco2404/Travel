@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Du lịch Cao Bằng</string>
     <string name="username">Tên đăng nhập</string>
-    <string name="password">Mật khẩu</string>
+    <string name="password">Mật khẩu     </string>
     <string name="dangnhap">Đăng nhập</string>
     <string name="dangky">Đăng ký</string>
     <string name="boqua">Bỏ qua</string>

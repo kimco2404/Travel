@@ -104,11 +104,10 @@ public class DiaDiemDAL {
         return contentValues;
     }
 
-
     public List<DiaDiemDTO> searchName(String searchName){
         dataAccessHelper = new SQLiteDataAccessHelper(context);
         List<DiaDiemDTO> listDiaDiem = new ArrayList<>();
-        String query = "Select * from DiaDIem where Ten like " + "'%" + searchName + "%'";
+        String query = "Select * from DiaDIem where Ten LIKE " + "'%" + searchName + "%'";
         Cursor cursor = dataAccessHelper.getData(query);
         while (cursor.moveToNext()) {
             DiaDiemDTO d = new DiaDiemDTO();
