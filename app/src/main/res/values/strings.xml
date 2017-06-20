@@ -16,6 +16,15 @@
     <string name="mach_nho">Mách nhỏ</string>
 
 
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!--- search -->
+    <string name="action_search">search</string>
+
+    <!-- login facebook-->
+    <string name="facebook_app_id">1582526431780421</string>
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
@@ -119,5 +128,4 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
-    <string name="visita" />
 </resources>

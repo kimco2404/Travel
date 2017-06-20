@@ -14,6 +14,7 @@ import java.util.List;
 
 public class DiaDiemBLL {
     private Context context;
+
     public DiaDiemBLL(Context context) {
         this.context = context;
     }
@@ -21,5 +22,15 @@ public class DiaDiemBLL {
     public List<DiaDiemDTO> layDanhSachDiaDiem() {
         DiaDiemDAL diaDiemDAL = new DiaDiemDAL(context);
         return diaDiemDAL.layDanhSachDiaDiem();
+    }
+
+    public boolean addDiaDiem(DiaDiemDTO dto) {
+        DiaDiemDAL diaDiemDAL = new DiaDiemDAL(context);
+        return diaDiemDAL.addDiaDiem(dto);
+    }
+
+    public List<DiaDiemDTO> searchName(String searchName){
+        DiaDiemDAL diaDiemDAL = new DiaDiemDAL(context);
+        return diaDiemDAL.searchName(searchName);
     }
 }

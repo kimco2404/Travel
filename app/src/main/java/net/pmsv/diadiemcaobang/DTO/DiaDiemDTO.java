@@ -1,5 +1,7 @@
 package net.pmsv.diadiemcaobang.DTO;
 
+import android.support.annotation.NonNull;
+
 import java.io.Serializable;
 
 /**
@@ -91,7 +93,7 @@ public class DiaDiemDTO implements Serializable {
 
     public DiaDiemDTO(String id, int tinh, String ten, String thongtin, String thoidiem, String duongdi, String machnho, int sogocchup, String hinhdaidien) {
         this.id = id;
-            this.tinh = tinh;
+        this.tinh = tinh;
         this.ten = ten;
         this.thongtin = thongtin;
         this.duongdi = duongdi;
@@ -104,5 +106,4 @@ public class DiaDiemDTO implements Serializable {
     public DiaDiemDTO() {
 
     }
-
 }
