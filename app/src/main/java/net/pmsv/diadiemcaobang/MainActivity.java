@@ -1,4 +1,4 @@
-package net.pmsv.diadiemcaobang;
+﻿package net.pmsv.diadiemcaobang;
 
 import android.content.Context;
 import android.content.Intent;
@@ -96,8 +96,8 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Cursor kt = db.getData("SELECT * FROM User ");
-                while (kt.moveToNext()) {
-                    if (txtdangnhap.getText().equals((kt.getString(1))) && txtpassword.getText().equals((kt.getString(2)))) {
+                while (kt.moveToNext())                {
+                    if (!txtdangnhap.getText().equals((kt.getString(1))) && !txtpassword.getText().equals((kt.getString(2)))) {
                         Toast.makeText(MainActivity.this, "Đăng Nhâp Ok", Toast.LENGTH_SHORT).show();
                         Intent home = new Intent(MainActivity.this, HomeActivity.class);
                         startActivity(home);
@@ -105,6 +105,7 @@ public class MainActivity extends AppCompatActivity
                         Toast.makeText(MainActivity.this, "Đăng Nhâp Ero", Toast.LENGTH_SHORT).show();
                     }
                 }
+
             }
         });
         loginButton.setOnClickListener(new View.OnClickListener() {
