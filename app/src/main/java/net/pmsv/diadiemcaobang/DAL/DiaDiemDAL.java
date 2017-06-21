@@ -42,20 +42,20 @@ public class DiaDiemDAL {
         List<DiaDiemDTO> list = new ArrayList<>();
         Cursor data = dataAccessHelper.getData("select * from DiaDiem");
         while (data.moveToNext()) {
-        DiaDiemDTO d = new DiaDiemDTO();
-        d.setId(data.getString(0));
-        d.setTinh(data.getInt(1));
-        d.setTen(data.getString(2));
-        d.setThongtin(data.getString(3));
-        d.setDuongdi(data.getString(4));
-        d.setMachnho(data.getString(5));
-        d.setHinhdaidien(data.getString(6));
-        d.setSogocchup(data.getInt(7));
-        d.setThoidiem(data.getString(8));
-        list.add(d);
-    }
+            DiaDiemDTO d = new DiaDiemDTO();
+            d.setId(data.getString(0));
+            d.setTinh(data.getInt(1));
+            d.setTen(data.getString(2));
+            d.setThongtin(data.getString(3));
+            d.setDuongdi(data.getString(4));
+            d.setMachnho(data.getString(5));
+            d.setHinhdaidien(data.getString(6));
+            d.setSogocchup(data.getInt(7));
+            d.setThoidiem(data.getString(8));
+            list.add(d);
+        }
         return list;
-}
+    }
 
 
     public boolean addDiaDiem(DiaDiemDTO dto) {
@@ -104,10 +104,11 @@ public class DiaDiemDAL {
         return contentValues;
     }
 
+
     public List<DiaDiemDTO> searchName(String searchName){
         dataAccessHelper = new SQLiteDataAccessHelper(context);
         List<DiaDiemDTO> listDiaDiem = new ArrayList<>();
-        String query = "Select * from DiaDIem where Ten LIKE " + "'%" + searchName + "%'";
+        String query = "Select * from DiaDIem where ten like " + "'%" + searchName + "%'";
         Cursor cursor = dataAccessHelper.getData(query);
         while (cursor.moveToNext()) {
             DiaDiemDTO d = new DiaDiemDTO();

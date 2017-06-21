@@ -33,6 +33,7 @@ import java.util.List;
  */
 
 public class AdapterDiaDiem extends RecyclerView.Adapter<AdapterDiaDiem.ViewHolder> {
+
     private Context mContext;
     private List<DiaDiemDTO> diaDiemList;
 
@@ -68,10 +69,12 @@ public class AdapterDiaDiem extends RecyclerView.Adapter<AdapterDiaDiem.ViewHold
         final DiaDiemDTO diaDiemDTO = diaDiemList.get(position);
         holder.tenDiaDiem.setText(diaDiemDTO.getTen());
         //holder.gocChup.setBackground(Drawable.createFromPath("R.drawable" + diaDiemDTO.getHinhdaidien()));
-        if (diaDiemDTO.getSogocchup() > 0) {
+        if (diaDiemDTO.getSogocchup() <= 0) {
             holder.gocChup.setText("Chưa có góc chụp");
+        }else{
+            holder.gocChup.setText("Có "+diaDiemDTO.getSogocchup() + " góc chụp");
         }
-        holder.gocChup.setText(diaDiemDTO.getSogocchup() + " góc chụp");
+
         Resources resources = mContext.getResources();
         int resID = resources.getIdentifier(diaDiemDTO.getHinhdaidien(), "drawable", mContext.getPackageName());
         // loading album cover using Glide library

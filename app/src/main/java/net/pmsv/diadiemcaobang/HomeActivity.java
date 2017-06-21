@@ -53,7 +53,6 @@ public class HomeActivity extends AppCompatActivity
     private RecyclerView recyclerView;
     private AdapterDiaDiem adapterDiaDiem;
     private List<DiaDiemDTO> diadiemList;
-    private SQLiteDataAccessHelper dataAccessHelper;
 
     GoogleApiClient googleApiClient;
 
@@ -87,18 +86,6 @@ public class HomeActivity extends AppCompatActivity
 
         initCollapsingToolbar();
 
-        dataAccessHelper = new SQLiteDataAccessHelper(this);
-        File database = getApplicationContext().getDatabasePath(SQLiteDataAccessHelper.DBNAME);
-        if (false == database.exists()) {
-            dataAccessHelper.getReadableDatabase();
-            //Copy db
-            if (copyDatabase(HomeActivity.this)) {
-                Toast.makeText(HomeActivity.this, "Copy database succes", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(HomeActivity.this, "Copy data error", Toast.LENGTH_SHORT).show();
-                return;
-            }
-        }
 
 
         DiaDiemBLL diaDiemBLL = new DiaDiemBLL(this);
@@ -175,26 +162,7 @@ public class HomeActivity extends AppCompatActivity
      * Adding few albums for testing
      */
 
-    private boolean copyDatabase(Context context) {
-        try {
 
-            InputStream inputStream = context.getAssets().open(SQLiteDataAccessHelper.DBNAME);
-            String outFileName = SQLiteDataAccessHelper.DBLOCATION + SQLiteDataAccessHelper.DBNAME;
-            OutputStream outputStream = new FileOutputStream(outFileName);
-            byte[] buff = new byte[1024];
-            int length = 0;
-            while ((length = inputStream.read(buff)) > 0) {
-                outputStream.write(buff, 0, length);
-            }
-            outputStream.flush();
-            outputStream.close();
-            Log.w("HomeActivity", "DB copied");
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

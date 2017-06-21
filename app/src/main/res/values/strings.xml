@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Du lịch Cao Bằng</string>
     <string name="username">Tên đăng nhập</string>
-    <string name="password">Mật khẩu     </string>
+    <string name="password">Mật khẩu</string>
     <string name="dangnhap">Đăng nhập</string>
     <string name="dangky">Đăng ký</string>
     <string name="boqua">Bỏ qua</string>
@@ -23,7 +23,7 @@
     <string name="action_search">search</string>
 
     <!-- login facebook-->
-    <string name="facebook_app_id">1582526431780421</string>
+    <string name="facebook_app_id">1976994372529224</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>

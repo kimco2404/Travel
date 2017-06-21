@@ -17,40 +17,6 @@
     <android.support.v4.view.ViewPager
         android:id="@+id/imageViewGocChup"
         android:layout_width="match_parent"
-        android:layout_height="450dp"
-        android:layout_below="@+id/toolbarGocChup"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="10dp" />
-
-    <TextView
-        android:id="@+id/textViewGocChup"
-        android:layout_below="@+id/imageViewGocChup"
-        android:text="Góc chụp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
-        android:textSize="14sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
-
-    <ImageButton
-        android:id="@+id/imageButtonPrev"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_alignStart="@+id/imageViewGocChup"
-        android:layout_centerVertical="true"
-        android:alpha="0.5"
-        android:background="@drawable/prev" />
-
-    <ImageButton
-        android:id="@+id/imageButtoNext"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_alignBaseline="@+id/imageButtonPrev"
-        android:layout_alignBottom="@+id/imageButtonPrev"
-        android:layout_alignEnd="@+id/imageViewGocChup"
-        android:alpha="0.5"
-        android:background="@drawable/next" />
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbarGocChup" />
 </RelativeLayout>
