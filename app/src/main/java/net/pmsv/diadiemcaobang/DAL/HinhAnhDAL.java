@@ -3,6 +3,7 @@ package net.pmsv.diadiemcaobang.DAL;
 import android.content.Context;
 import android.database.Cursor;
 
+import net.pmsv.diadiemcaobang.DTO.GocChupDTO;
 import net.pmsv.diadiemcaobang.DTO.HinhAnhDTO;
 
 import java.util.ArrayList;
@@ -12,36 +13,38 @@ import java.util.List;
  * Created by USER on 6/17/2017.
  */
 
-public class HinhAnhDAL {
-
-
-    private SQLiteDataAccessHelper dataAccessHelper;
-    private Context context;
-    Cursor data;
+public class HinhAnhDAL extends  SQLiteDataAccessHelper {
 
     public HinhAnhDAL(Context context) {
-        this.context = context;
+        super(context);
     }
-
     public List<HinhAnhDTO> layDanhSachHinhAnh() {
-        dataAccessHelper = new SQLiteDataAccessHelper(context);
-        List<HinhAnhDTO> list = new ArrayList<>();
+        ArrayList<HinhAnhDTO> listhinhanh = new ArrayList<HinhAnhDTO>();
         String query = "select * from HinhAnh";
-        Cursor data = dataAccessHelper.getData(query);
+        Cursor data = getData(query);
         while (data.moveToNext()) {
             HinhAnhDTO dto = new HinhAnhDTO();
-            dto.setIdHinhAnh(data.getInt(0));
+            dto.setId(data.getInt(0));
             dto.setIdGocChup(data.getInt(1));
             dto.setTenHinh(data.getString(2));
-            list.add(dto);
+            listhinhanh.add(dto);
         }
-        return list;
+        return listhinhanh;
     }
 
-    public Cursor getHinhAnhByIDGocChup(String idDiaDiem) {
-        dataAccessHelper = new SQLiteDataAccessHelper(context);
-        String query = "select * from HinhAnh, GocChup where GocChup.DiaDiem = '" + idDiaDiem +"' and GocChup.id = HinhAnh.GocChup";
-        Cursor data = dataAccessHelper.getData(query);
-        return data;
+    public ArrayList<HinhAnhDTO> getHinhAnhByIDGocChup(String idDiaDiem) {
+        ArrayList<HinhAnhDTO> listhinhanh = new ArrayList<HinhAnhDTO>();
+        String query = "select * from HinhAnh where idDiaDiem " + " = '" + idDiaDiem + "'";
+        Cursor data =getData(query);
+        while (data.moveToNext()) {
+            HinhAnhDTO HA = new HinhAnhDTO();
+            HA.setId(data.getInt(0));
+            HA.setIdGocChup(data.getInt(1));
+            HA.setTenHinh(data.getString(2));
+            HA.setIdDiaDiem(data.getString(3));
+            listhinhanh.add(HA);
+        }
+        return listhinhanh;
+
     }
 }

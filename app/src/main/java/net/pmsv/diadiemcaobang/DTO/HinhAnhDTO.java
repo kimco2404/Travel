@@ -7,41 +7,50 @@ import java.io.Serializable;
  */
 
 public class HinhAnhDTO implements Serializable {
-    private int idHinhAnh;
+    private int id;
     private int idGocChup;
-    private String tenHinh;
+    private String TenHinh;
+    private  String idDiaDiem;
 
-    public HinhAnhDTO(int idHinhAnh, int idGocChup, String tenHinh) {
-        this.idHinhAnh = idHinhAnh;
-        this.idGocChup = idGocChup;
-        this.tenHinh = tenHinh;
+    public int getId() {
+        return id;
     }
 
-    public HinhAnhDTO() {}
-
-    public void setIdHinhAnh(int idHinhAnh) {
-
-        this.idHinhAnh = idHinhAnh;
-    }
-
-    public void setIdGocChup(int idGocChup) {
-        this.idGocChup = idGocChup;
-    }
-
-    public void setTenHinh(String tenHinh) {
-        this.tenHinh = tenHinh;
-    }
-
-    public int getIdHinhAnh() {
-
-        return idHinhAnh;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getIdGocChup() {
         return idGocChup;
     }
 
+    public void setIdGocChup(int idGocChup) {
+        this.idGocChup = idGocChup;
+    }
+
     public String getTenHinh() {
-        return tenHinh;
+        return TenHinh;
+    }
+
+    public void setTenHinh(String tenHinh) {
+        TenHinh = tenHinh;
+    }
+
+    public String getIdDiaDiem() {
+        return idDiaDiem;
+    }
+
+    public void setIdDiaDiem(String idDiaDiem) {
+        this.idDiaDiem = idDiaDiem;
+    }
+
+    public HinhAnhDTO(int id, int idGocChup, String tenHinh, String idDiaDiem) {
+        this.id = id;
+        this.idGocChup = idGocChup;
+        TenHinh = tenHinh;
+        this.idDiaDiem = idDiaDiem;
+    }
+
+    public HinhAnhDTO() {
     }
 }

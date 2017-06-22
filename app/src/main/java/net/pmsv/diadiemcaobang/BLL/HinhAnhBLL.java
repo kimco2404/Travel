@@ -6,6 +6,7 @@ import android.database.Cursor;
 import net.pmsv.diadiemcaobang.DAL.HinhAnhDAL;
 import net.pmsv.diadiemcaobang.DTO.HinhAnhDTO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,7 +26,7 @@ public class HinhAnhBLL {
         return hinhAnhDAL.layDanhSachHinhAnh();
     }
 
-    public Cursor getHinhAnhByIDGocChup(String idDiaDiem) {
+    public List<HinhAnhDTO> getHinhAnhByIDGocChup(String idDiaDiem) {
         HinhAnhDAL hinhAnhDAL = new HinhAnhDAL(context);
         return hinhAnhDAL.getHinhAnhByIDGocChup(idDiaDiem);
     }

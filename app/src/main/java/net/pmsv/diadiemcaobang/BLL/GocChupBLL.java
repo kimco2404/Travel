@@ -18,11 +18,6 @@ public class GocChupBLL {
         this.context = context;
     }
 
-    public List<GocChupDTO> layDanhSachGocChup() {
-        GocChupDAL gocChupDAL = new GocChupDAL(context);
-        return gocChupDAL.layDanhSachGocChup();
-    }
-
     public List<GocChupDTO> getGocChupByID(String idDiaDiem) {
         GocChupDAL gocChupDAL = new GocChupDAL(context);
         return gocChupDAL.getGocChupByID(idDiaDiem);

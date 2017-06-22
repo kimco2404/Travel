@@ -148,7 +148,6 @@ public class HomeActivity extends AppCompatActivity
                 }
                 if (scrollRange + verticalOffset == 0) {
                     collapsingToolbar.setTitle(getString(R.string.app_name));
-                    collapsingToolbar.setCollapsedTitleTextColor(getColor(R.color.colorTitleDark));
                     isShow = true;
                 } else if (isShow) {
                     collapsingToolbar.setTitle(" ");
