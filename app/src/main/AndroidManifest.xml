@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="net.pmsv.diadiemcaobang">
+    package="com.example.k.diadiembinhphuoc">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -23,25 +23,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".HomeActivity">
 
         </activity>
+
         <activity android:name=".AnimationActivity"></activity>
 
         <activity android:name=".DiaDiemActivity" />
 
-        <activity android:name=".DiaDiemDetailActivity">
-        </activity>
+        <activity android:name=".DiaDiemDetailActivity"/>
 
-        <activity android:name=".ThemDiaDiemActivity">
-        </activity>
+        <activity android:name=".ThemDiaDiemActivity"/>
 
-        <activity android:name=".GocChupActivity">
-        </activity>
+        <activity android:name=".GocChupActivity"/>
 
-        <activity android:name=".DangkyActivity">
-
-        </activity>
+        <activity android:name=".DangkyActivity"/>
 
         <activity android:name="com.facebook.FacebookActivity"
             android:configChanges=

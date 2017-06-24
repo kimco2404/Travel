@@ -11,4 +11,5 @@
     <color name="colorTitleDark">#00779f</color>
     <color name="colorTitle">#00bfff</color>
     <color name="colorAccent_phototrip_dark">#cd205b</color>
+    <color name="logincolor">#ccc</color>
 </resources>
