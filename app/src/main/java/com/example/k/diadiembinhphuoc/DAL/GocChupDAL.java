@@ -24,6 +24,7 @@ public class GocChupDAL extends  SQLiteDataAccessHelper {
             GC.setId(data.getInt(0));
             GC.setIdDiaDiem(data.getString(1));
             GC.setNoiDung(data.getString(2));
+            GC.setTenHinh(data.getString(3));
             listgocchup.add(GC);
         }
         return listgocchup;

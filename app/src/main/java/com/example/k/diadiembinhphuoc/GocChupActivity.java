@@ -25,7 +25,6 @@ public class GocChupActivity extends AppCompatActivity {
     GocChupAdapter adapterGocChup = new GocChupAdapter(this);
     ViewPager viewPager;
     List<GocChupDTO> gocChupList;
-    List<HinhAnhDTO> hinhAnhList;
     String img;
     int idGocChup;
     Cursor hinhAnh;
@@ -45,8 +44,7 @@ public class GocChupActivity extends AppCompatActivity {
         toolbar.setTitle(diaDiemDTO.getTen());
         String idDiaDiem= diaDiemDTO.getId();
         gocChupList=gocChupBLL.getGocChupByID(idDiaDiem);
-        hinhAnhList= hinhAnhBLL.getHinhAnhByIDGocChup(idDiaDiem);
-        adapterGocChup= new GocChupAdapter(this,gocChupList,hinhAnhList);
+        adapterGocChup= new GocChupAdapter(this,gocChupList);
         init();
     }
 

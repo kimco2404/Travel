@@ -25,12 +25,10 @@ public class GocChupAdapter extends PagerAdapter {
     private Context ctx;
     private LayoutInflater inflater;
     private List<GocChupDTO> gocchupList;
-    private List<HinhAnhDTO> hinhAnhList;
 
-    public GocChupAdapter (Context mContext, List<GocChupDTO> gocchupList, List<HinhAnhDTO> hinhAnhList) {
+    public GocChupAdapter (Context mContext, List<GocChupDTO> gocchupList) {
         this.ctx = mContext;
         this.gocchupList = gocchupList;
-        this.hinhAnhList=hinhAnhList;
     }
     public GocChupAdapter(Context ctx){
         this.ctx = ctx;
@@ -54,7 +52,7 @@ public class GocChupAdapter extends PagerAdapter {
         ImageView img =(ImageView)v.findViewById(R.id.image_view);
         TextView tv  = (TextView)v.findViewById(R.id.textViewGocChup);
         Log.d("countAAA",""+gocchupList.size());
-        String imageFileName = hinhAnhList.get(position).getTenHinh();
+        String imageFileName = gocchupList.get(position).getTenHinh();
         img.setBackground(getImage(imageFileName));
         tv.setText(gocchupList.get(position).getNoiDung());
         container.addView(v);

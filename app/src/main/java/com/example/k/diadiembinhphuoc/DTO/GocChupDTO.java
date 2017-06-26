@@ -10,6 +10,17 @@ public class GocChupDTO implements Serializable {
     private int id;
     private String idDiaDiem;
     private String NoiDung;
+    private String TenHinh;
+
+
+    public String getTenHinh() {
+        return TenHinh;
+    }
+
+    public void setTenHinh(String tenHinh) {
+        TenHinh = tenHinh;
+    }
+
 
     public int getId() {
         return id;
@@ -35,10 +46,11 @@ public class GocChupDTO implements Serializable {
         NoiDung = noiDung;
     }
 
-    public GocChupDTO(int id, String idDiaDiem, String noiDung) {
+    public GocChupDTO(int id, String idDiaDiem, String noiDung,String tenHinh) {
         this.id = id;
         this.idDiaDiem = idDiaDiem;
-        NoiDung = noiDung;
+        this.NoiDung = noiDung;
+        this.TenHinh=tenHinh;
     }
 
     public GocChupDTO() {
