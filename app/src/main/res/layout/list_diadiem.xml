@@ -9,6 +9,7 @@
         android:id="@+id/imgHinh"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:scaleType="centerCrop"
         android:src="@drawable/android_logo" />
@@ -17,6 +18,8 @@
         android:id="@id/txtTenDiaDiem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/imgHinh"
+        android:layout_alignStart="@+id/imgHinh"
         android:layout_below="@+id/imgHinh"
         android:text="Tên Địa điểm"
         android:textAlignment="center"

@@ -6,6 +6,9 @@
             android:id="@+id/action_themdiadiem"
             android:title="Thêm địa điểm" />
         <item
+            android:id="@+id/nav_search"
+            android:title="search" />
+        <item
             android:id="@+id/nav_logout"
             android:title="Đăng xuất" />
     </group>

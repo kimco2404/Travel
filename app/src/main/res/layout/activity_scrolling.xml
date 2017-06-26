@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="false"
-    tools:context="com.example.k.diadiembinhphuoc.ScrollingActivity">
+    tools:context="net.pmsv.diadiemcaobang.ScrollingActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar_home"
         android:layout_width="match_parent"
         android:layout_height="@dimen/app_bar_height"
-        android:background="@drawable/backgroundbp"
+        android:background="@drawable/background_home_429_285"
         android:fitsSystemWindows="false">
 
         <android.support.design.widget.CollapsingToolbarLayout

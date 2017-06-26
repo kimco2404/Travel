@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="customtabs-25.3.1">
     <CLASSES>
-      <root url="file://$USER_HOME$/.android/build-cache/15b75e1adb6b71c3b4c8d047d7358dfc7f06a1be/output/res" />
-      <root url="jar://$USER_HOME$/.android/build-cache/15b75e1adb6b71c3b4c8d047d7358dfc7f06a1be/output/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.android/build-cache/f734c2ca7fc77c602e98edac380527e4e5ed7606/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/f734c2ca7fc77c602e98edac380527e4e5ed7606/output/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

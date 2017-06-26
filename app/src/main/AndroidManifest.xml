@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.k.diadiembinhphuoc">
+    package="net.pmsv.diadiemcaobang">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -16,29 +16,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".HomeActivity">
 
         </activity>
-
         <activity android:name=".AnimationActivity"></activity>
 
         <activity android:name=".DiaDiemActivity" />
+        <activity android:name=".DiaDiemDetailActivity">
 
-        <activity android:name=".DiaDiemDetailActivity"/>
+        </activity>
 
-        <activity android:name=".ThemDiaDiemActivity"/>
+        <activity android:name=".ThemDiaDiemActivity">
 
-        <activity android:name=".GocChupActivity"/>
+        </activity>
 
-        <activity android:name=".DangkyActivity"/>
+        <activity android:name=".GocChupActivity">
+
+        </activity>
+
 
         <activity android:name="com.facebook.FacebookActivity"
             android:configChanges=
@@ -53,4 +55,5 @@
             android:label="@string/title_activity_scrolling"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
+
 </manifest>
