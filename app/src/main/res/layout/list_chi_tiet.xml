@@ -8,27 +8,13 @@
         android:layout_width="50dp"
         android:layout_height="50dp" />
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/textViewChiTiet"
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/txtTen"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:gravity="center_vertical"
-            android:text=""
-            android:textColor="#7700ff"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/txtThongTin"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:gravity="center_vertical"
-            android:text=" "
-            android:textColor="#7700ff"
-            android:textSize="20sp" />
-    </LinearLayout>
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:text="Thong tin"
+        android:textColor="#7700ff"
+        android:textSize="20sp" />
 
 </LinearLayout>
