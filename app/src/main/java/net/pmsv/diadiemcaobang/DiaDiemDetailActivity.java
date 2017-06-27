@@ -34,10 +34,9 @@ public class DiaDiemDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dia_diem_detail);
         Intent intent = getIntent();
-        if (intent != null) {
-            Bundle bundle = intent.getBundleExtra("data");
-            id = bundle.getString("id");
-        }
+        String data = intent.getStringExtra("data");
+
+
         init();
 
         adaperChiTiet = new AdaperChiTiet(this, R.layout.list_chi_tiet, chiTiets);
@@ -73,17 +72,30 @@ public class DiaDiemDetailActivity extends AppCompatActivity {
 
     }
 
+//    private void init() {
+//
+//        imageSwitcher = (ImageSwitcher) findViewById(R.id.imageSwitcher);
+//        listViewChiTiet = (ListView) findViewById(R.id.listviewChiTiet);
+//        chiTiets = new ArrayList<>();
+//        DiaDiemBLL diaDiemBLL = new DiaDiemBLL(this);
+//        chiTiets = new ArrayList<>();
+//        chiTiets = diaDiemBLL.DiaDiemDetail(id);
+//
+//        hinh = new int[]{R.drawable.ag_image_1,R.drawable.ag_image_2,R.drawable.ag_image_3,R.drawable.ag_image_4,R.drawable.ag_image_5,R.drawable.ag_image_6,R.drawable.ag_image_7,R.drawable.ag_image_8,R.drawable.ag_image_9,R.drawable.ag_image_10,R.drawable.ag_image_11,R.drawable.ag_image_12,R.drawable.ag_image_13};
+//        count = hinh.length;
+//
+//    }
     private void init() {
 
         imageSwitcher = (ImageSwitcher) findViewById(R.id.imageSwitcher);
         listViewChiTiet = (ListView) findViewById(R.id.listviewChiTiet);
         chiTiets = new ArrayList<>();
         DiaDiemBLL diaDiemBLL = new DiaDiemBLL(this);
-        chiTiets = new ArrayList<>();
         chiTiets = diaDiemBLL.DiaDiemDetail(id);
 
-        hinh = new int[]{R.drawable.cb01, R.drawable.cb02, R.drawable.cb03, R.drawable.cb04};
+        hinh = new int[]{R.drawable.ag_image_1,R.drawable.ag_image_2,R.drawable.ag_image_3,R.drawable.ag_image_4,R.drawable.ag_image_5,R.drawable.ag_image_6,R.drawable.ag_image_7,R.drawable.ag_image_8,R.drawable.ag_image_9,R.drawable.ag_image_10,R.drawable.ag_image_11,R.drawable.ag_image_12,R.drawable.ag_image_13};
         count = hinh.length;
 
     }
 }
+

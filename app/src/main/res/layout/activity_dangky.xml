@@ -1,156 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:fitsSystemWindows="true"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbar"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:fitsSystemWindows="false">
-
-        <android.support.design.widget.CollapsingToolbarLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:layout_scrollInterpolator="@android:anim/decelerate_interpolator"
-            app:toolbarId="@+id/toolbarChiTiet">
-
-            <ImageView
-                android:id="@+id/app_bar_image"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/background_home_429_285" />
-
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbarChiTiet"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:buttonGravity="top"
-                android:clipChildren="false"
-                android:elevation="4dp"
-                android:minHeight="?attr/actionBarSize"
-                android:textAlignment="center"
-                android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-                app:subtitle="SVTour"
-                app:subtitleTextColor="@android:color/holo_green_dark" />
-
-        </android.support.design.widget.CollapsingToolbarLayout>
-    </android.support.design.widget.AppBarLayout>
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:text="Đăng ký"
+        android:textColor="@color/colorPrimary"/>
 
 
-    <android.support.v4.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
+    <EditText
+        android:id="@+id/txtHoTen"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="Họ tên" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/txtSoDienThoai"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="Số điện thoại" />
+
+    <EditText
+        android:id="@+id/txtTenDangNhap"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="Tên đăng nhập" />
+
+    <EditText
+        android:id="@+id/txtMatKhau"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="Mật khẩu"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnThem"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            tools:context="net.pmsv.diadiemcaobang.MainActivity"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="5dp">
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:onClick="display"
+            android:text="Thêm" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Đăng Ký"
-                android:textColor="@color/colorPrimary"
-                android:textSize="24dp" />
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:onClick="display"
+            android:text="Nhập lại" />
+    </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+</LinearLayout>
 
-                <TextView
-                    android:id="@+id/tvTenDangNhap"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_toStartOf="@+id/btDangNhap"
-                    android:text="@string/username"
-
-                    android:textSize="18sp" />
-
-                <EditText
-                    android:id="@+id/txtDangNhap"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignStart="@+id/txtMatKhau"
-                    android:layout_alignTop="@+id/tvTenDangNhap"
-                    android:ems="10"
-                    android:inputType="textPersonName" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="1">
-
-                <TextView
-                    android:id="@+id/tvMatKhau"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignStart="@+id/tvTenDangNhap"
-                    android:text="@string/password"
-                    android:textSize="18sp" />
-
-
-                <EditText
-                    android:id="@+id/txtMatKhau"
-                    android:layout_width="87dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBaseline="@+id/tvMatKhau"
-                    android:layout_alignBottom="@+id/tvMatKhau"
-                    android:layout_marginStart="14dp"
-                    android:layout_toEndOf="@+id/tvTenDangNhap"
-                    android:layout_weight="0.73"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:paddingRight="13dp"
-                    android:selectAllOnFocus="false" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/btDangKi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/txtMatKhau"
-                    android:layout_centerHorizontal="true"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="21dp"
-                    android:text="Đăng Ký" />
-
-                <Button
-                    android:id="@+id/btnHuy"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignEnd="@+id/btDangNhap"
-                    android:layout_alignStart="@+id/btDangNhap"
-                    android:layout_below="@+id/btDangNhap"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="16dp"
-                    android:text="Hủy" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
-</android.support.design.widget.CoordinatorLayout>

@@ -105,10 +105,11 @@ public class DiaDiemDAL {
         return contentValues;
     }
 
+
     public List<DiaDiemDTO> searchName(String searchName){
         dataAccessHelper = new SQLiteDataAccessHelper(context);
         List<DiaDiemDTO> listDiaDiem = new ArrayList<>();
-        String query = "Select * from DiaDIem where Ten LIKE " + "'%" + searchName + "%'";
+        String query = "Select * from DiaDIem where ten like " + "'%" + searchName + "%'";
         Cursor cursor = dataAccessHelper.getData(query);
         while (cursor.moveToNext()) {
             DiaDiemDTO d = new DiaDiemDTO();
@@ -126,21 +127,19 @@ public class DiaDiemDAL {
         cursor.close();
         return listDiaDiem;
     }
-
-
     public ArrayList<ChiTiet> DiaDiemDetail(String id) {
         dataAccessHelper = new SQLiteDataAccessHelper(context);
         ArrayList<ChiTiet> list = new ArrayList<>();
-        Cursor data = dataAccessHelper.getData("select * from DiaDiem where Id='"+id+"'");
-        while (data.moveToNext()) {
-            ChiTiet d = new ChiTiet();
-            d.setId(data.getString(0));
-            d.setTen(data.getString(2));
-            d.setThongTin(data.getString(3));
-            d.setHinh(data.getString(6));
-            list.add(d);
+        String query ="select * from DiaDiem where Id='"+id+"'";
+        Cursor cursor = dataAccessHelper.getData(query);
+        while (cursor.moveToNext()) {
+            ChiTiet chiTiet = new ChiTiet();
+            chiTiet.setId(cursor.getInt(0));
+            chiTiet.setTen(cursor.getString(2));
+            chiTiet.setThongTin(cursor.getString(3));
+            chiTiet.setHinh(cursor.getInt(6));
+            list.add(chiTiet);
         }
         return list;
     }
-
 }

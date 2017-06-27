@@ -6,47 +6,44 @@ package net.pmsv.diadiemcaobang.DTO;
 
 public class ChiTiet {
     private String ten, thongtin;
-    private String hinh, id;
+    private int hinh, id;
 
-    public ChiTiet(String ten, String hinh, String id) {
+    public ChiTiet(String ten, int hinh, int id) {
         this.ten = ten;
         this.hinh = hinh;
         this.id = id;
     }
-
-
     public ChiTiet() {
     }
-
-    public String getTen() {
-        return ten;
-    }
-
     public String getThongTin() {
         return thongtin;
+    }
+    public String getTen() {
+        return ten;
     }
 
     public void setTen(String ten) {
         this.ten = ten;
     }
-
     public void setThongTin(String thongtin) {
         this.thongtin = thongtin;
     }
 
-    public String getHinh() {
+    public int getHinh() {
         return hinh;
     }
 
-    public void setHinh(String hinh) {
+    public void setHinh(int hinh) {
         this.hinh = hinh;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
+
+
 }

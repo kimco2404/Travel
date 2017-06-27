@@ -9,12 +9,12 @@ import java.io.Serializable;
  */
 
 public class DiaDiemDTO implements Serializable {
-    private int tinh;
     private String id;
+    private int tinh;
     private String ten;
     private String thongtin;
-    private int sogocchup;
     private String duongdi;
+    private int sogocchup;
     private String hinhdaidien;
     private String machnho;
     private String thoidiem;
