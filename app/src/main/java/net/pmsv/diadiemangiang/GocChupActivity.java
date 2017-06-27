@@ -1,7 +1,6 @@
-package net.pmsv.diadiemcaobang;
+package net.pmsv.diadiemangiang;
 
 import android.content.Intent;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -10,21 +9,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import net.pmsv.diadiemcaobang.Adapter.AdapterGocChup;
-import net.pmsv.diadiemcaobang.DTO.DiaDiemDTO;
+import net.pmsv.diadiemangiang.DTO.DiaDiemDTO;
+import net.pmsv.diadiemangiang.R;
 
 public class GocChupActivity extends AppCompatActivity {
-    
-    ViewPager viewPager;
+    ImageView imageViewGocChup;
     TextView textViewGocChup;
     ImageButton imageButtonNext, imageButtonPrev;
     Toolbar toolbar;
 
-    AdapterGocChup adapterGocChup;
-
     private void init(){
 
-        viewPager = (ViewPager) findViewById(R.id.imageViewGocChup);
+        imageViewGocChup = (ImageView) findViewById(R.id.imageViewGocChup);
         textViewGocChup = (TextView) findViewById(R.id.textViewGocChup);
         imageButtonNext = (ImageButton) findViewById(R.id.imageButtoNext);
         imageButtonPrev = (ImageButton) findViewById(R.id.imageButtonPrev);
@@ -44,7 +40,7 @@ public class GocChupActivity extends AppCompatActivity {
         Toast.makeText(GocChupActivity.this, diaDiemDTO.getTen()
                 ,Toast.LENGTH_SHORT).show();
 
-        adapterGocChup = new AdapterGocChup(this);
-        viewPager.setAdapter(adapterGocChup);
+
+
     }
 }

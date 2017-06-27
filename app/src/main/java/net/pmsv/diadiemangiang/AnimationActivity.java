@@ -1,4 +1,4 @@
-package net.pmsv.diadiemcaobang;
+package net.pmsv.diadiemangiang;
 
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.view.animation.BounceInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.support.v7.app.AppCompatActivity;
+
+import net.pmsv.diadiemangiang.R;
 
 /**
  * Created by May1 on 6/2/2017.

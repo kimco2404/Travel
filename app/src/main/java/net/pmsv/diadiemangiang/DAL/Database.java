@@ -1,4 +1,4 @@
-package net.pmsv.diadiemcaobang.DAL;
+package net.pmsv.diadiemangiang.DAL;
 
 import android.app.Activity;
 import android.content.Context;

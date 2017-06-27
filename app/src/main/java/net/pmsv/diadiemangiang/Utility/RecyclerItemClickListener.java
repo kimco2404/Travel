@@ -1,4 +1,4 @@
-package net.pmsv.diadiemcaobang.Utility;
+package net.pmsv.diadiemangiang.Utility;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

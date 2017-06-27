@@ -1,14 +1,12 @@
-package net.pmsv.diadiemcaobang.Adapter;
+package net.pmsv.diadiemangiang.Adapter;
 
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.os.Bundle;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.text.method.ScrollingMovementMethod;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -17,18 +15,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
-import net.pmsv.diadiemcaobang.DTO.DiaDiemDTO;
-import net.pmsv.diadiemcaobang.DiaDiemDetailActivity;
-import net.pmsv.diadiemcaobang.GocChupActivity;
-import net.pmsv.diadiemcaobang.HomeActivity;
-import net.pmsv.diadiemcaobang.R;
-import net.pmsv.diadiemcaobang.Utility.RecyclerItemClickListener;
+import net.pmsv.diadiemangiang.DTO.DiaDiemDTO;
+import net.pmsv.diadiemangiang.GocChupActivity;
+import net.pmsv.diadiemangiang.R;
 
-import java.io.Serializable;
 import java.util.List;
 
 
@@ -36,10 +29,10 @@ import java.util.List;
  * Created by may38 on 5/29/2017.
  */
 
-public class AdapterDiaDiem extends RecyclerView.Adapter<AdapterDiaDiem.ViewHolder>{
+public class AdapterDiaDiem extends RecyclerView.Adapter<AdapterDiaDiem.ViewHolder> {
     private Context mContext;
     private List<DiaDiemDTO> diaDiemList;
-    public int position;
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView tenDiaDiem, gocChup;
         public ImageView hinh, overflow;
@@ -68,8 +61,7 @@ public class AdapterDiaDiem extends RecyclerView.Adapter<AdapterDiaDiem.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, final int position) {
-        this.position = position;
+    public void onBindViewHolder(final ViewHolder holder, int position) {
         final DiaDiemDTO diaDiemDTO = diaDiemList.get(position);
         holder.tenDiaDiem.setText(diaDiemDTO.getTen());
         //holder.gocChup.setBackground(Drawable.createFromPath("R.drawable" + diaDiemDTO.getHinhdaidien()));
@@ -88,29 +80,6 @@ public class AdapterDiaDiem extends RecyclerView.Adapter<AdapterDiaDiem.ViewHold
                 showPopupMenu(holder.overflow, diaDiemDTO);
             }
         });
-        holder.tenDiaDiem.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                DetailActivity(position);
-            }
-        });
-        holder.hinh.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                DetailActivity(position);
-            }
-        });
-    }
-
-    public void DetailActivity(int position) {
-        Intent intent;
-        Bundle bundle = new Bundle();
-        bundle.putString("id", diaDiemList.get(position).getId());
-        intent = new Intent(mContext, DiaDiemDetailActivity.class);
-        intent.putExtra("data", bundle);
-
-        mContext.startActivity(intent);
-
     }
 
     /**

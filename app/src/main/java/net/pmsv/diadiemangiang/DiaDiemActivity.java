@@ -1,4 +1,4 @@
-package net.pmsv.diadiemcaobang;
+package net.pmsv.diadiemangiang;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,9 +7,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import net.pmsv.diadiemcaobang.Adapter.AdapterDiaDiem;
-
-import java.util.ArrayList;
+import net.pmsv.diadiemangiang.Adapter.AdapterDiaDiem;
+import net.pmsv.diadiemangiang.R;
 
 public class DiaDiemActivity extends AppCompatActivity {
     GridView gvDiaDiem;
