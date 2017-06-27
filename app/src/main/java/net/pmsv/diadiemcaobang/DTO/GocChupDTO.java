@@ -3,13 +3,21 @@ package net.pmsv.diadiemcaobang.DTO;
 import java.io.Serializable;
 
 /**
- * Created by USER on 6/17/2017.
+ * Created by K on 20/06/2017.
  */
 
-public class GocChupDTO implements Serializable {
+public class GocchupDTO implements Serializable {
     private int id;
-    private String idDiaDiem;
-    private String NoiDung;
+    private String gocChup;
+    private String[] hinhAnh;
+
+    public String getGocChup() {
+        return gocChup;
+    }
+
+    public void setGocChup(String gocChup) {
+        this.gocChup = gocChup;
+    }
 
     public int getId() {
         return id;
@@ -19,28 +27,20 @@ public class GocChupDTO implements Serializable {
         this.id = id;
     }
 
-    public String getIdDiaDiem() {
-        return idDiaDiem;
+    public String[] getHinhAnh() {
+        return hinhAnh;
     }
 
-    public void setIdDiaDiem(String idDiaDiem) {
-        this.idDiaDiem = idDiaDiem;
+    public void setHinhAnh(String[] hinhAnh) {
+        this.hinhAnh = hinhAnh;
     }
 
-    public String getNoiDung() {
-        return NoiDung;
-    }
-
-    public void setNoiDung(String noiDung) {
-        NoiDung = noiDung;
-    }
-
-    public GocChupDTO(int id, String idDiaDiem, String noiDung) {
+    public GocchupDTO(int id, String gocChup, String[] hinhAnh) {
         this.id = id;
-        this.idDiaDiem = idDiaDiem;
-        NoiDung = noiDung;
+        this.gocChup = gocChup;
+        this.hinhAnh = hinhAnh;
     }
+    public GocchupDTO() {
 
-    public GocChupDTO() {
     }
 }

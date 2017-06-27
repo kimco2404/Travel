@@ -34,6 +34,8 @@ public class DiaDiemBLL {
         DiaDiemDAL diaDiemDAL = new DiaDiemDAL(context);
         return diaDiemDAL.searchName(searchName);
     }
+
+
     public ArrayList<ChiTiet> DiaDiemDetail(String id) {
         DiaDiemDAL diaDiemDAL = new DiaDiemDAL(context);
         return diaDiemDAL.DiaDiemDetail(id);

@@ -34,9 +34,10 @@ public class DiaDiemDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dia_diem_detail);
         Intent intent = getIntent();
-        String data = intent.getStringExtra("data");
-
-
+        if (intent != null) {
+            Bundle bundle = intent.getBundleExtra("data");
+            id = bundle.getString("id");
+        }
         init();
 
         adaperChiTiet = new AdaperChiTiet(this, R.layout.list_chi_tiet, chiTiets);
@@ -72,33 +73,17 @@ public class DiaDiemDetailActivity extends AppCompatActivity {
 
     }
 
-//    private void init() {
-//
-//        imageSwitcher = (ImageSwitcher) findViewById(R.id.imageSwitcher);
-//        listViewChiTiet = (ListView) findViewById(R.id.listviewChiTiet);
-//        chiTiets = new ArrayList<>();
-//        DiaDiemBLL diaDiemBLL = new DiaDiemBLL(this);
-//        chiTiets = new ArrayList<>();
-//        chiTiets = diaDiemBLL.DiaDiemDetail(id);
-//
-//        hinh = new int[]{R.drawable.ag_image_1,R.drawable.ag_image_2,R.drawable.ag_image_3,R.drawable.ag_image_4,R.drawable.ag_image_5,R.drawable.ag_image_6,R.drawable.ag_image_7,R.drawable.ag_image_8,R.drawable.ag_image_9,R.drawable.ag_image_10,R.drawable.ag_image_11,R.drawable.ag_image_12,R.drawable.ag_image_13};
-//        count = hinh.length;
-//
-//    }
     private void init() {
 
         imageSwitcher = (ImageSwitcher) findViewById(R.id.imageSwitcher);
         listViewChiTiet = (ListView) findViewById(R.id.listviewChiTiet);
         chiTiets = new ArrayList<>();
-        chiTiets.add(new ChiTiet("Thông Tin", R.drawable.thong_tin, 1));
-        chiTiets.add(new ChiTiet("Thời Điểm", R.drawable.thoi_diem, 2));
-        chiTiets.add(new ChiTiet("Đường Đi", R.drawable.duong_di, 3));
-        chiTiets.add(new ChiTiet("Góc Chụp", R.drawable.dia_chi, 4));
-        chiTiets.add(new ChiTiet("Mách nhỏ", R.drawable.mach_nho, 5));
+        DiaDiemBLL diaDiemBLL = new DiaDiemBLL(this);
+        chiTiets = new ArrayList<>();
+        chiTiets = diaDiemBLL.DiaDiemDetail(id);
 
-        hinh = new int[]{R.drawable.ag_image_1,R.drawable.ag_image_2,R.drawable.ag_image_3,R.drawable.ag_image_4,R.drawable.ag_image_5,R.drawable.ag_image_6,R.drawable.ag_image_7,R.drawable.ag_image_8,R.drawable.ag_image_9,R.drawable.ag_image_10,R.drawable.ag_image_11,R.drawable.ag_image_12,R.drawable.ag_image_13};
+        hinh = new int[]{R.drawable.cb01, R.drawable.cb02, R.drawable.cb03, R.drawable.cb04};
         count = hinh.length;
 
     }
 }
-

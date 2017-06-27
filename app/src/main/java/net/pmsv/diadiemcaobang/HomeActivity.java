@@ -87,6 +87,18 @@ public class HomeActivity extends AppCompatActivity
 
         initCollapsingToolbar();
 
+        dataAccessHelper = new SQLiteDataAccessHelper(this);
+        File database = getApplicationContext().getDatabasePath(SQLiteDataAccessHelper.DBNAME);
+        if (false == database.exists()) {
+            dataAccessHelper.getReadableDatabase();
+            //Copy db
+            if (copyDatabase(HomeActivity.this)) {
+                Toast.makeText(HomeActivity.this, "Copy database succes", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(HomeActivity.this, "Copy data error", Toast.LENGTH_SHORT).show();
+                return;
+            }
+        }
 
 
         DiaDiemBLL diaDiemBLL = new DiaDiemBLL(this);
@@ -103,21 +115,6 @@ public class HomeActivity extends AppCompatActivity
         recyclerView.addItemDecoration(new GridSpacingItemDecoration(1, dpToPx(10), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapterDiaDiem);
-
-//        recyclerView.addOnItemTouchListener(
-//                new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
-//                    @Override
-//                    public void onItemClick(View view, int position) {
-//                        // TODO Handle item click
-//                        if (view.getId() == R.id.thumbnail) {
-//                            Toast.makeText(HomeActivity.this, (int) recyclerView.getChildItemId(view), Toast.LENGTH_SHORT).show();
-//                        }
-//
-//
-//                    }
-//                })
-//        );
-
 
         try {
             Glide.with(this).load(R.drawable.background_home_429_285).into((ImageView) findViewById(R.id.backdrop));
@@ -162,7 +159,26 @@ public class HomeActivity extends AppCompatActivity
      * Adding few albums for testing
      */
 
+    private boolean copyDatabase(Context context) {
+        try {
 
+            InputStream inputStream = context.getAssets().open(SQLiteDataAccessHelper.DBNAME);
+            String outFileName = SQLiteDataAccessHelper.DBLOCATION + SQLiteDataAccessHelper.DBNAME;
+            OutputStream outputStream = new FileOutputStream(outFileName);
+            byte[] buff = new byte[1024];
+            int length = 0;
+            while ((length = inputStream.read(buff)) > 0) {
+                outputStream.write(buff, 0, length);
+            }
+            outputStream.flush();
+            outputStream.close();
+            Log.w("HomeActivity", "DB copied");
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

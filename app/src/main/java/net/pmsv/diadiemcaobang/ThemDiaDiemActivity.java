@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,7 +18,7 @@ public class ThemDiaDiemActivity extends AppCompatActivity implements View.OnCli
 
 
     private Button btnThem,btnReset;
-    private EditText txtId, txtTinh, txtTen ,txtThongTin, txtDươngDi, txtMachNho, txtHinhDaiDien, txtSoGocChup, txtThoiDiem;
+    private TextView txtId, txtTinh, txtTen ,txtThongTin, txtDươngDi, txtMachNho, txtHinhDaiDien, txtSoGocChup, txtThoiDiem;
 
     DiaDiemBLL diaDiemBLL = new DiaDiemBLL(this);
 
@@ -56,30 +55,18 @@ public class ThemDiaDiemActivity extends AppCompatActivity implements View.OnCli
         btnThem = (Button) findViewById(R.id.btnThem);
         btnReset = (Button) findViewById(R.id.btnReset);
 
-        txtId = (EditText) findViewById(R.id.txtId);
-        txtTinh = (EditText) findViewById(R.id.txtTinh);
-        txtTen = (EditText) findViewById(R.id.txtTen);
-        txtThongTin = (EditText) findViewById(R.id.txtThongTin);
-        txtDươngDi = (EditText) findViewById(R.id.txtDuongDi);
-        txtMachNho = (EditText) findViewById(R.id.txtMachNho);
-        txtHinhDaiDien = (EditText) findViewById(R.id.txtHinhDaiDien);
-        txtSoGocChup = (EditText) findViewById(R.id.txtSoGocChup);
-        txtThoiDiem = (EditText) findViewById(R.id.txtThoiDiem);
+        txtId = (TextView) findViewById(R.id.txtId);
+        txtTinh = (TextView) findViewById(R.id.txtTinh);
+        txtTen = (TextView) findViewById(R.id.txtTen);
+        txtThongTin = (TextView) findViewById(R.id.txtThongTin);
+        txtDươngDi = (TextView) findViewById(R.id.txtDuongDi);
+        txtMachNho = (TextView) findViewById(R.id.txtMachNho);
+        txtHinhDaiDien = (TextView) findViewById(R.id.txtHinhDaiDien);
+        txtSoGocChup = (TextView) findViewById(R.id.txtSoGocChup);
+        txtThoiDiem = (TextView) findViewById(R.id.txtThoiDiem);
 
         btnThem.setOnClickListener(this);
         btnReset.setOnClickListener(this);
-    }
-
-    private void resetText(){
-        txtId.setText("");
-        txtTinh.setText("");
-        txtTen.setText("");
-        txtThongTin.setText("");
-        txtDươngDi.setText("");
-        txtMachNho.setText("");
-        txtHinhDaiDien.setText("");
-        txtSoGocChup.setText("");
-        txtThoiDiem.setText("");
     }
 
     @Override
@@ -87,7 +74,15 @@ public class ThemDiaDiemActivity extends AppCompatActivity implements View.OnCli
         if(v.getId() == R.id.btnThem){
             addDiaDiem();
         }else if(v.getId() == R.id.btnReset){
-            resetText();
+            txtId.setText("");
+            txtTinh.setText("");
+            txtTen.setText("");
+            txtThongTin.setText("");
+            txtDươngDi.setText("");
+            txtMachNho.setText("");
+            txtHinhDaiDien.setText("");
+            txtSoGocChup.setText("");
+            txtThoiDiem.setText("");
         }
     }
 }

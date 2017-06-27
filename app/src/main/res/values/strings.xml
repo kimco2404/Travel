@@ -1,14 +1,14 @@
 <resources>
-    <string name="app_name">Du lịch An Giang</string>
+    <string name="app_name">Du lịch Cao Bằng</string>
     <string name="username">Tên đăng nhập</string>
-    <string name="password">Mật khẩu</string>
+    <string name="password">Mật khẩu     </string>
     <string name="dangnhap">Đăng nhập</string>
     <string name="dangky">Đăng ký</string>
     <string name="boqua">Bỏ qua</string>
     <string name="title_activity_login">Sign in</string>
 
     <string name="backdrop_title">LOVE MUSIC</string>
-    <string name="backdrop_subtitle">Các địa điểm du lịch An Giang</string>
+    <string name="backdrop_subtitle">Các địa điểm du lịch Cao Bằng</string>
     <string name="goc_chup">Góc chụp</string>
     <string name="thong_tin">Thông tin</string>
     <string name="thoi_diem">Thời điểm</string>
@@ -23,7 +23,7 @@
     <string name="action_search">search</string>
 
     <!-- login facebook-->
-    <string name="facebook_app_id">1976994372529224</string>
+    <string name="facebook_app_id">1582526431780421</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>

@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.os.Bundle;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.text.method.ScrollingMovementMethod;
@@ -21,9 +22,11 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 
 import net.pmsv.diadiemcaobang.DTO.DiaDiemDTO;
+import net.pmsv.diadiemcaobang.DiaDiemDetailActivity;
 import net.pmsv.diadiemcaobang.GocChupActivity;
 import net.pmsv.diadiemcaobang.HomeActivity;
 import net.pmsv.diadiemcaobang.R;
+import net.pmsv.diadiemcaobang.Utility.RecyclerItemClickListener;
 
 import java.io.Serializable;
 import java.util.List;
@@ -33,11 +36,10 @@ import java.util.List;
  * Created by may38 on 5/29/2017.
  */
 
-public class AdapterDiaDiem extends RecyclerView.Adapter<AdapterDiaDiem.ViewHolder> {
-
+public class AdapterDiaDiem extends RecyclerView.Adapter<AdapterDiaDiem.ViewHolder>{
     private Context mContext;
     private List<DiaDiemDTO> diaDiemList;
-
+    public int position;
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView tenDiaDiem, gocChup;
         public ImageView hinh, overflow;
@@ -66,16 +68,15 @@ public class AdapterDiaDiem extends RecyclerView.Adapter<AdapterDiaDiem.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
+        this.position = position;
         final DiaDiemDTO diaDiemDTO = diaDiemList.get(position);
         holder.tenDiaDiem.setText(diaDiemDTO.getTen());
         //holder.gocChup.setBackground(Drawable.createFromPath("R.drawable" + diaDiemDTO.getHinhdaidien()));
-        if (diaDiemDTO.getSogocchup() <= 0) {
+        if (diaDiemDTO.getSogocchup() > 0) {
             holder.gocChup.setText("Chưa có góc chụp");
-        }else{
-            holder.gocChup.setText("Có "+diaDiemDTO.getSogocchup() + " góc chụp");
         }
-
+        holder.gocChup.setText(diaDiemDTO.getSogocchup() + " góc chụp");
         Resources resources = mContext.getResources();
         int resID = resources.getIdentifier(diaDiemDTO.getHinhdaidien(), "drawable", mContext.getPackageName());
         // loading album cover using Glide library
@@ -87,6 +88,29 @@ public class AdapterDiaDiem extends RecyclerView.Adapter<AdapterDiaDiem.ViewHold
                 showPopupMenu(holder.overflow, diaDiemDTO);
             }
         });
+        holder.tenDiaDiem.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                DetailActivity(position);
+            }
+        });
+        holder.hinh.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                DetailActivity(position);
+            }
+        });
+    }
+
+    public void DetailActivity(int position) {
+        Intent intent;
+        Bundle bundle = new Bundle();
+        bundle.putString("id", diaDiemList.get(position).getId());
+        intent = new Intent(mContext, DiaDiemDetailActivity.class);
+        intent.putExtra("data", bundle);
+
+        mContext.startActivity(intent);
+
     }
 
     /**

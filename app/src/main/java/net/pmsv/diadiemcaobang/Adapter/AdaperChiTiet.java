@@ -1,6 +1,7 @@
 package net.pmsv.diadiemcaobang.Adapter;
 
 import android.content.Context;
+import android.media.Image;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 import net.pmsv.diadiemcaobang.DTO.ChiTiet;
 import net.pmsv.diadiemcaobang.R;
 
+import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,9 +25,9 @@ public class AdaperChiTiet extends BaseAdapter {
 
     private Context context;
     private int layout;
-    private List<ChiTiet> chiTiets;
+    private ArrayList<ChiTiet> chiTiets;
 
-    public AdaperChiTiet(Context context, int layout, List<ChiTiet> chiTiets) {
+    public AdaperChiTiet(Context context, int layout, ArrayList<ChiTiet> chiTiets) {
         this.context = context;
         this.layout = layout;
         this.chiTiets = chiTiets;
@@ -42,13 +45,13 @@ public class AdaperChiTiet extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
-        return chiTiets.get(position).getId();
+        return 0;
     }
 
     private class Viewholder {
         TextView ten;
-        ImageView hinh;
         TextView thongtin;
+        ImageView hinh;
     }
 
     @Override
@@ -67,17 +70,17 @@ public class AdaperChiTiet extends BaseAdapter {
         } else {
             viewholder = (Viewholder) convertView.getTag();
         }
+
+        ChiTiet ct = chiTiets.get(position);
+        Log.e("MyTag", "Hinh" + ct.getHinh());
+        Log.e("MyTag", "Ten" + ct.getTen());
+        Log.e("MyTag", "All " + chiTiets.toString());
         int hinh;
         try {
-            ChiTiet ct = chiTiets.get(position);
-            Log.e("MyTag", "Hinh" + ct.getHinh());
-            Log.e("MyTag", "Ten" + ct.getTen());
-            Log.e("MyTag", "All " + chiTiets.toString());
-
-            viewholder.hinh.setImageResource(ct.getHinh());
-            viewholder.ten.setText("Ten: " +  ct.getTen());
-            viewholder.thongtin.setText("Thông Tin: " + ct.getThongTin());
-
+            hinh = context.getResources().getIdentifier(ct.getHinh(), "drawable", context.getPackageName());
+            viewholder.hinh.setImageResource(hinh);
+            viewholder.ten.setText("Tên: " + ct.getTen());
+                viewholder.thongtin.setText("Thông Tin: " + ct.getThongTin());
         } catch (Exception e) {
             Log.e("MyTag", "Failure to get drawable id.", e);
         }
